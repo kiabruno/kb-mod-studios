@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KB Mod Studios | KB Pack</title>
+    <meta
+        name="description"
+        content="Informationen und Anleitung zum KB Pack von KB Mod Studios."
+    >
+
+    <title>KB Mod Studios | KB Pack – Infos</title>
 
     <style>
+
+        /* ========================================
+           GRUNDLAGEN
+        ======================================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #080b10;
             color: #f1f5f9;
-            line-height: 1.6;
+
+            line-height: 1.7;
         }
 
         a {
@@ -25,29 +44,57 @@
             text-decoration: none;
         }
 
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+
         .navbar {
             position: fixed;
+
             top: 0;
+            left: 0;
+
             width: 100%;
+            height: 72px;
+
             z-index: 1000;
-            background: rgba(8,11,16,0.9);
+
+            background:
+                rgba(8, 11, 16, 0.9);
+
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid #202934;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
         }
 
         .nav-container {
             max-width: 1200px;
-            height: 72px;
+
+            height: 100%;
+
             margin: auto;
-            padding: 0 25px;
+
+            padding:
+                0 25px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
         .logo {
             font-size: 21px;
+
             font-weight: 800;
+
+            letter-spacing: 1px;
+
+            white-space: nowrap;
         }
 
         .logo span {
@@ -56,45 +103,140 @@
 
         .nav-links {
             display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
             list-style: none;
-            gap: 10px;
         }
 
         .nav-links a {
-            color: #aeb8c5;
-            padding: 10px 15px;
+            color: #9da8b5;
+
+            padding:
+                10px 15px;
+
             border-radius: 8px;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links .active {
+        .nav-links a:hover {
             color: white;
+
             background: #151c25;
         }
 
+        .nav-links a.active {
+            color: white;
+
+            background: #17221c;
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
         .hero {
-            min-height: 75vh;
+            min-height: 58vh;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             text-align: center;
-            padding: 130px 20px 70px;
+
+            padding:
+                135px 20px
+                70px;
 
             background:
                 radial-gradient(
-                    circle at 50% 35%,
+                    circle at 50% 30%,
                     rgba(85,214,139,0.18),
                     transparent 40%
+                ),
+                linear-gradient(
+                    180deg,
+                    #080b10,
+                    #0b1017
                 );
         }
 
-        .pack-icon {
-            font-size: 100px;
-            margin-bottom: 20px;
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .pack-logo {
+            width: 105px;
+            height: 105px;
+
+            margin:
+                0 auto
+                25px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 22px;
+
+            font-size: 52px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #172a20,
+                    #101a15
+                );
+
+            border:
+                1px solid
+                rgba(85,214,139,0.3);
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.35);
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding:
+                7px 14px;
+
+            margin-bottom: 18px;
+
+            border-radius: 50px;
+
+            color: #72e7a3;
+
+            background:
+                rgba(85,214,139,0.08);
+
+            border:
+                1px solid
+                rgba(85,214,139,0.25);
+
+            font-size: 13px;
+
+            font-weight: bold;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 8vw, 80px);
+            font-size:
+                clamp(45px, 8vw, 78px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -102,28 +244,62 @@
         }
 
         .hero p {
-            color: #98a3b0;
             max-width: 700px;
-            margin: 20px auto 30px;
+
+            margin:
+                20px auto 0;
+
+            color: #929dab;
+
             font-size: 18px;
         }
 
+
+        /* ========================================
+           BUTTONS
+        ======================================== */
+
         .buttons {
             display: flex;
+
             justify-content: center;
+
             gap: 12px;
+
             flex-wrap: wrap;
+
+            margin-top: 30px;
         }
 
         .btn {
-            padding: 13px 22px;
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                12px 20px;
+
             border-radius: 9px;
+
+            font-size: 14px;
+
             font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         .btn-primary {
-            background: #55d68b;
             color: #06100a;
+
+            background: #55d68b;
         }
 
         .btn-primary:hover {
@@ -131,118 +307,333 @@
         }
 
         .btn-secondary {
+            color: #dce4ec;
+
             background: #171e27;
-            border: 1px solid #293541;
+
+            border:
+                1px solid
+                #293541;
         }
+
+        .btn-secondary:hover {
+            background: #202a35;
+        }
+
+
+        /* ========================================
+           CONTENT
+        ======================================== */
 
         .container {
-            max-width: 1050px;
+            max-width: 950px;
+
             margin: auto;
-            padding: 90px 20px;
+
+            padding:
+                80px 20px
+                110px;
         }
 
-        .title {
+        .section-title {
             text-align: center;
+
             margin-bottom: 45px;
         }
 
-        .title h2 {
-            font-size: 38px;
+        .section-title h2 {
+            font-size: 36px;
+
+            margin-bottom: 8px;
         }
 
-        .title p {
-            color: #8994a1;
+        .section-title p {
+            color: #7f8a97;
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
+        /* ========================================
+           INFO BOX
+        ======================================== */
+
+        .info-box {
+            background:
+                linear-gradient(
+                    145deg,
+                    #111821,
+                    #0e131a
+                );
+
+            border:
+                1px solid
+                #202a35;
+
+            border-radius: 16px;
+
+            padding: 32px;
+
+            margin-bottom: 22px;
         }
 
-        .feature {
-            background: #10151d;
-            border: 1px solid #202934;
-            border-radius: 14px;
-            padding: 28px;
-        }
+        .info-box h2 {
+            color: #72e7a3;
 
-        .feature-icon {
-            font-size: 32px;
+            font-size: 24px;
+
             margin-bottom: 12px;
         }
 
+        .info-box h3 {
+            margin-top: 25px;
+
+            margin-bottom: 7px;
+
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: #9aa4b1;
+        }
+
+        .info-box ul {
+            color: #9aa4b1;
+
+            padding-left: 22px;
+
+            margin-top: 10px;
+        }
+
+        .info-box li {
+            margin:
+                6px 0;
+        }
+
+
+        /* ========================================
+           FEATURES
+        ======================================== */
+
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .feature {
+            padding: 20px;
+
+            border-radius: 12px;
+
+            background: #0c1117;
+
+            border:
+                1px solid
+                #202934;
+        }
+
+        .feature-icon {
+            font-size: 27px;
+
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            margin: 0 0 5px;
+        }
+
         .feature p {
-            color: #909ba8;
-            margin-top: 8px;
+            font-size: 14px;
         }
 
-        .install {
-            margin-top: 70px;
-            padding: 35px;
-            background: #10151d;
-            border: 1px solid #202934;
-            border-radius: 15px;
-        }
 
-        .install h2 {
-            margin-bottom: 20px;
-        }
+        /* ========================================
+           INSTALLATION
+        ======================================== */
 
         .steps {
             display: grid;
-            gap: 15px;
+
+            gap: 18px;
+
+            margin-top: 20px;
         }
 
         .step {
             display: flex;
-            gap: 15px;
+
+            gap: 16px;
+
             align-items: flex-start;
         }
 
-        .number {
-            min-width: 35px;
-            height: 35px;
+        .step-number {
+            min-width: 38px;
+
+            height: 38px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             border-radius: 50%;
-            background: #55d68b;
+
             color: #06100a;
+
+            background: #55d68b;
+
             font-weight: bold;
         }
 
-        .step p {
-            color: #929dab;
+        .step-content h3 {
+            margin: 0 0 3px;
         }
+
+        .step-content p {
+            margin: 0;
+        }
+
+
+        /* ========================================
+           CODE
+        ======================================== */
+
+        .code-box {
+            margin-top: 15px;
+
+            padding: 15px;
+
+            overflow-x: auto;
+
+            border-radius: 9px;
+
+            background: #070a0e;
+
+            border:
+                1px solid
+                #27313c;
+
+            color: #a8f0c4;
+
+            font-family:
+                Consolas,
+                monospace;
+
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           WARNING
+        ======================================== */
+
+        .warning {
+            background:
+                #17150d;
+
+            border-color:
+                #5b5130;
+        }
+
+        .warning h2 {
+            color: #e5c968;
+        }
+
+
+        /* ========================================
+           FAQ
+        ======================================== */
+
+        .faq {
+            padding:
+                18px 0;
+
+            border-top:
+                1px solid
+                #252e38;
+        }
+
+        .faq:first-child {
+            border-top: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+
+            margin-bottom: 5px;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
 
         footer {
-            border-top: 1px solid #202934;
-            padding: 35px 20px;
+            padding:
+                35px 20px;
+
             text-align: center;
-            color: #6f7b88;
+
+            color: #687583;
+
+            background: #070a0e;
+
+            border-top:
+                1px solid
+                #202934;
         }
 
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
         @media (max-width: 750px) {
+
             .features {
                 grid-template-columns: 1fr;
             }
 
+            .nav-links {
+                gap: 2px;
+            }
+
             .nav-links a {
-                font-size: 12px;
-                padding: 7px;
+                font-size: 11px;
+
+                padding:
+                    7px 6px;
             }
 
             .logo {
-                font-size: 16px;
+                font-size: 15px;
             }
+
+            .info-box {
+                padding: 24px 20px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- ========================================
+     NAVIGATION
+========================================= -->
+
 <nav class="navbar">
+
     <div class="nav-container">
 
         <a href="index.html" class="logo">
@@ -250,41 +641,83 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="index.html">Start</a></li>
-            <li><a href="projects.html">Projekte</a></li>
-            <li><a href="kb-pack.html" class="active">KB Pack</a></li>
-            <li><a href="kb-pack-info.html">Infos</a></li>
+
+            <li>
+                <a href="index.html">
+                    Start
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html">
+                    Projekte
+                </a>
+            </li>
+
+            <li>
+                <a href="kb-pack.html">
+                    KB Pack
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="kb-pack-info.html"
+                    class="active">
+                    Infos
+                </a>
+            </li>
+
         </ul>
 
     </div>
+
 </nav>
+
+
+
+<!-- ========================================
+     HERO
+========================================= -->
 
 <header class="hero">
 
-    <div>
+    <div class="hero-content">
 
-        <div class="pack-icon">📦</div>
+        <div class="pack-logo">
+            🎨
+        </div>
 
-        <h1>KB <span>Pack</span></h1>
+        <div class="badge">
+            Resource Pack & Shader
+        </div>
+
+        <h1>
+            KB <span>Pack</span>
+        </h1>
 
         <p>
-            Das KB Pack ist ein Projekt von KB Mod Studios.
-            Hier findest du Informationen, Features und eine
-            Anleitung zur Verwendung.
+            Alle wichtigen Informationen über das KB Pack,
+            seine Funktionen und die Installation findest
+            du auf dieser Seite.
         </p>
 
         <div class="buttons">
 
-            <!-- HIER DEN ECHTEN DOWNLOAD-LINK EINTRAGEN -->
             <a
-                href="https://modrinth.com/resourcepack/kb-pack"
+                href="https://modrinth.com/organization/kb-mod-studios"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary">
+
                 Auf Modrinth
             </a>
 
-            <a href="kb-pack-info.html" class="btn btn-secondary">
-                Anleitung & Infos
+            <a
+                href="kb-pack.html"
+                class="btn btn-secondary">
+
+                Zur KB Pack Seite
             </a>
 
         </div>
@@ -294,101 +727,511 @@
 </header>
 
 
+
+<!-- ========================================
+     HAUPTINHALT
+========================================= -->
+
 <main class="container">
 
-    <div class="title">
-        <h2>Was bietet das KB Pack?</h2>
-        <p>Ein Überblick über die wichtigsten Bereiche.</p>
-    </div>
 
-    <div class="features">
+    <!-- ÜBER DAS PACK -->
 
-        <div class="feature">
-            <div class="feature-icon">🎮</div>
-            <h3>Minecraft-Erlebnis</h3>
-            <p>
-                Das KB Pack soll Minecraft um zusätzliche
-                Inhalte und Ideen erweitern.
-            </p>
+    <section class="info-box">
+
+        <h2>
+            🎨 Was ist das KB Pack?
+        </h2>
+
+        <p>
+            Das KB Pack ist ein eigenes Minecraft-Projekt
+            von KB Mod Studios. Es handelt sich um ein
+            Resource-Pack beziehungsweise Shader-Projekt,
+            das die Darstellung von Minecraft verändern
+            und verbessern soll.
+        </p>
+
+        <p style="margin-top: 12px;">
+            Ziel des Projekts ist es, Minecraft einen
+            eigenen visuellen Stil zu geben und dabei
+            eine angenehme Spielerfahrung zu erhalten.
+        </p>
+
+    </section>
+
+
+
+    <!-- FEATURES -->
+
+    <section class="info-box">
+
+        <h2>
+            ✨ Features
+        </h2>
+
+        <p>
+            Je nach Version können unterschiedliche
+            Funktionen enthalten sein.
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌎
+                </div>
+
+                <h3>
+                    Überarbeitete Welt
+                </h3>
+
+                <p>
+                    Eine angepasste Darstellung der
+                    Minecraft-Welt.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Beleuchtung
+                </h3>
+
+                <p>
+                    Verbesserte beziehungsweise angepasste
+                    Lichtdarstellung.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌅
+                </div>
+
+                <h3>
+                    Atmosphäre
+                </h3>
+
+                <p>
+                    Ein eigener visueller Stil für
+                    deine Minecraft-Welt.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Einstellungen
+                </h3>
+
+                <p>
+                    Je nach Version können verschiedene
+                    Optionen angepasst werden.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">⚙️</div>
-            <h3>Features</h3>
-            <p>
-                Verschiedene Funktionen und Inhalte,
-                die das Pack besonders machen.
-            </p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">🔧</div>
-            <h3>Einfache Nutzung</h3>
-            <p>
-                Eine möglichst einfache Installation
-                und verständliche Dokumentation.
-            </p>
-        </div>
-
-    </div>
+    </section>
 
 
-    <div class="install">
 
-        <h2>Installation</h2>
+    <!-- INSTALLATION -->
+
+    <section class="info-box">
+
+        <h2>
+            📥 Installation
+        </h2>
+
+        <p>
+            Die genaue Installation kann abhängig davon
+            sein, ob du das Resource Pack, den Shader oder
+            eine Kombination davon verwendest.
+        </p>
+
 
         <div class="steps">
 
-            <div class="step">
-                <div class="number">1</div>
-                <p>
-                    Lade das KB Pack von der offiziellen
-                    Projektseite herunter.
-                </p>
-            </div>
 
             <div class="step">
-                <div class="number">2</div>
-                <p>
-                    Stelle sicher, dass deine Minecraft-Version
-                    mit dem Pack kompatibel ist.
-                </p>
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        KB Pack herunterladen
+                    </h3>
+
+                    <p>
+                        Lade die gewünschte Version
+                        von der offiziellen Projektseite
+                        herunter.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="step">
-                <div class="number">3</div>
-                <p>
-                    Installiere das Pack entsprechend der
-                    Anleitung.
-                </p>
-            </div>
 
             <div class="step">
-                <div class="number">4</div>
-                <p>
-                    Starte Minecraft und überprüfe,
-                    ob das Pack korrekt geladen wurde.
-                </p>
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Minecraft-Version überprüfen
+                    </h3>
+
+                    <p>
+                        Stelle sicher, dass deine
+                        Minecraft-Version vom Pack
+                        unterstützt wird.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Resource Pack installieren
+                    </h3>
+
+                    <p>
+                        Öffne in Minecraft die
+                        Resource-Pack-Einstellungen
+                        und aktiviere das KB Pack.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Shader aktivieren
+                    </h3>
+
+                    <p>
+                        Falls deine Version einen Shader
+                        enthält, aktiviere ihn über deine
+                        verwendete Shader-Unterstützung.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    5
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Fertig!
+                    </h3>
+
+                    <p>
+                        Starte deine Welt und genieße
+                        das KB Pack.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
 
-        <br>
+    </section>
 
-        <a href="kb-pack-info.html" class="btn btn-primary">
-            Komplette Anleitung
-        </a>
 
-    </div>
+
+    <!-- EMPFOHLENE EINSTELLUNGEN -->
+
+    <section class="info-box">
+
+        <h2>
+            ⚙️ Einstellungen
+        </h2>
+
+        <p>
+            Für die beste Darstellung empfehlen wir,
+            die Einstellungen entsprechend der
+            verwendeten Minecraft- und Shader-Version
+            anzupassen.
+        </p>
+
+        <h3>
+            Grafik
+        </h3>
+
+        <p>
+            Verwende möglichst die Grafikeinstellungen,
+            die von deinem System problemlos unterstützt
+            werden.
+        </p>
+
+        <h3>
+            Shader
+        </h3>
+
+        <p>
+            Falls das KB Pack als Shader verwendet wird,
+            können die verfügbaren Shader-Einstellungen
+            nach deinen Anforderungen angepasst werden.
+        </p>
+
+    </section>
+
+
+
+    <!-- VERSIONEN -->
+
+    <section class="info-box">
+
+        <h2>
+            🧱 Unterstützte Versionen
+        </h2>
+
+        <p>
+            Die aktuell unterstützten Minecraft-Versionen
+            findest du immer auf der jeweiligen
+            KB-Pack-Projektseite.
+        </p>
+
+        <div class="code-box">
+            Minecraft-Version: siehe Modrinth-Projektseite
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQ -->
+
+    <section class="info-box">
+
+        <h2>
+            ❓ Häufige Fragen
+        </h2>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Ist das KB Pack ein Mod?
+            </div>
+
+            <p>
+                Nein. Das KB Pack ist ein Resource-Pack-
+                beziehungsweise Shader-Projekt.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Welche Minecraft-Version brauche ich?
+            </div>
+
+            <p>
+                Das hängt von der jeweiligen Version
+                des KB Packs ab. Die unterstützten
+                Versionen stehen auf der Projektseite.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Kann ich das Pack mit anderen Packs verwenden?
+            </div>
+
+            <p>
+                Das hängt von den jeweiligen Packs und
+                deren Funktionen ab. Bei Problemen solltest
+                du zunächst nur das KB Pack aktivieren.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Wo bekomme ich Updates?
+            </div>
+
+            <p>
+                Neue Versionen werden über die offizielle
+                Projektseite veröffentlicht.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WICHTIG -->
+
+    <section class="info-box warning">
+
+        <h2>
+            ⚠️ Wichtig
+        </h2>
+
+        <p>
+            Die genauen Funktionen, Anforderungen und
+            Installationsschritte können sich zwischen
+            verschiedenen KB-Pack-Versionen ändern.
+            Überprüfe deshalb vor der Installation immer
+            die Informationen der jeweiligen Version.
+        </p>
+
+    </section>
+
+
+
+    <!-- MODRINTH -->
+
+    <section
+        class="info-box"
+        style="text-align:center;">
+
+        <h2>
+            🚀 KB Pack ausprobieren
+        </h2>
+
+        <p>
+            Lade die aktuelle Version herunter und
+            entdecke das KB Pack selbst.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="https://modrinth.com/organization/kb-mod-studios"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+
+                Zur Modrinth-Seite
+            </a>
+
+        </div>
+
+    </section>
+
 
 </main>
 
+
+
+<!-- ========================================
+     FOOTER
+========================================= -->
+
 <footer>
-    © <span id="year"></span> KB Mod Studios
+
+    © <span id="year"></span>
+    KB Mod Studios
+
 </footer>
 
+
+
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /*
+        Automatisches Jahr
+    */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /*
+        Kleine Animation für Info-Boxen
+    */
+
+    const boxes =
+        document.querySelectorAll(".info-box");
+
+    boxes.forEach(
+        function(box, index) {
+
+            box.style.opacity = "0";
+            box.style.transform =
+                "translateY(15px)";
+
+            setTimeout(
+                function() {
+
+                    box.style.transition =
+                        "opacity 0.5s ease, transform 0.5s ease";
+
+                    box.style.opacity = "1";
+
+                    box.style.transform =
+                        "translateY(0)";
+
+                },
+                100 + index * 70
+            );
+
+        }
+    );
+
 </script>
 
 </body>
