@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Die Projekte von KB Mod Studios.">
     <title>KB Mod Studios | Projekte</title>
 
     <style>
@@ -11,6 +12,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -21,25 +26,35 @@
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         .navbar {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
+            height: 72px;
             z-index: 1000;
-            background: rgba(8,11,16,0.9);
+
+            background: rgba(8, 11, 16, 0.88);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid #202934;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .nav-container {
             max-width: 1200px;
-            height: 72px;
+            height: 100%;
             margin: auto;
+
             padding: 0 25px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -48,6 +63,8 @@
         .logo {
             font-size: 21px;
             font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -56,32 +73,90 @@
 
         .nav-links {
             display: flex;
+            align-items: center;
+            gap: 8px;
             list-style: none;
-            gap: 10px;
         }
 
         .nav-links a {
-            color: #aeb8c5;
+            color: #9da8b5;
             padding: 10px 15px;
             border-radius: 8px;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links .active {
-            background: #151c25;
+        .nav-links a:hover {
             color: white;
+            background: #151c25;
         }
+
+        .nav-links a.active {
+            color: white;
+            background: #17221c;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            padding: 160px 20px 80px;
+            min-height: 55vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
+
+            padding:
+                130px 20px
+                70px;
+
             background:
-                radial-gradient(circle at 50% 20%, rgba(85,214,139,0.15), transparent 40%);
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(85, 214, 139, 0.17),
+                    transparent 40%
+                ),
+                linear-gradient(
+                    180deg,
+                    #080b10,
+                    #0b1017
+                );
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 7px 14px;
+            margin-bottom: 20px;
+
+            border-radius: 50px;
+
+            color: #72e7a3;
+            background: rgba(85,214,139,0.08);
+
+            border: 1px solid rgba(85,214,139,0.25);
+
+            font-size: 13px;
+            font-weight: bold;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 70px);
-            margin-bottom: 15px;
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
@@ -90,86 +165,221 @@
 
         .hero p {
             color: #929dab;
+            font-size: 18px;
+
             max-width: 650px;
             margin: auto;
         }
 
+
+        /* =========================
+           PROJECT SECTION
+        ========================= */
+
+        .projects-section {
+            padding: 80px 20px 110px;
+        }
+
         .container {
-            max-width: 1100px;
+            max-width: 1050px;
             margin: auto;
-            padding: 0 20px 100px;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
         }
 
-        .project {
-            background: #10151d;
-            border: 1px solid #202934;
-            border-radius: 15px;
-            padding: 28px;
-            transition: 0.25s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            border-color: rgba(85,214,139,0.4);
-        }
-
-        .project-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 14px;
-            background: #17221c;
-            border: 1px solid #294a38;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .section-title h2 {
             font-size: 35px;
-            margin-bottom: 20px;
-        }
-
-        .project h2 {
             margin-bottom: 8px;
         }
 
-        .project p {
+        .section-title p {
+            color: #7f8a97;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+        .project {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111821,
+                    #0e131a
+                );
+
+            border: 1px solid #202a35;
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .project::before {
+            content: "";
+
+            position: absolute;
+
+            top: -100px;
+            right: -100px;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: rgba(85,214,139,0.07);
+
+            pointer-events: none;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(85,214,139,0.4);
+
+            box-shadow:
+                0 15px 45px
+                rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================
+           PROJECT ICON
+        ========================= */
+
+        .project-icon {
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: #17221c;
+
+            border:
+                1px solid
+                rgba(85,214,139,0.25);
+
+            font-size: 37px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           PROJECT TEXT
+        ========================= */
+
+        .project h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
             color: #929dab;
-            margin-bottom: 20px;
+
+            min-height: 75px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           TAGS
+        ========================= */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 24px;
         }
 
         .tag {
             display: inline-block;
-            font-size: 12px;
+
             padding: 5px 9px;
+
             border-radius: 6px;
-            background: #19211b;
+
+            font-size: 12px;
+            font-weight: bold;
+
             color: #72e7a3;
-            margin: 3px;
+
+            background: #17221c;
+
+            border:
+                1px solid
+                rgba(85,214,139,0.15);
         }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .project-buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
             flex-wrap: wrap;
+
+            gap: 10px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 10px 17px;
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 11px 17px;
+
             border-radius: 8px;
-            font-weight: 700;
+
             font-size: 14px;
-            transition: 0.2s;
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         .btn-primary {
-            background: #55d68b;
             color: #06100a;
+            background: #55d68b;
         }
 
         .btn-primary:hover {
@@ -177,51 +387,120 @@
         }
 
         .btn-secondary {
+            color: #dbe3eb;
+
             background: #171e27;
-            border: 1px solid #28333f;
+
+            border:
+                1px solid
+                #293541;
         }
 
         .btn-secondary:hover {
             background: #202a35;
         }
 
-        .info {
+
+        /* =========================
+           BOTTOM INFO
+        ========================= */
+
+        .bottom-info {
             text-align: center;
-            color: #717d8b;
-            margin-top: 40px;
+
+            margin-top: 45px;
+
+            color: #687583;
+            font-size: 14px;
         }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            border-top: 1px solid #202934;
             padding: 35px 20px;
+
             text-align: center;
-            color: #6f7b88;
+
+            color: #687583;
+
+            background: #070a0e;
+
+            border-top:
+                1px solid
+                #202934;
         }
 
-        @media (max-width: 750px) {
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
             .projects {
                 grid-template-columns: 1fr;
             }
 
-            .nav-links {
-                gap: 0;
+            .project-description {
+                min-height: auto;
             }
+        }
 
-            .nav-links a {
-                font-size: 12px;
-                padding: 7px;
+        @media (max-width: 600px) {
+
+            .nav-container {
+                padding: 0 12px;
             }
 
             .logo {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+                padding: 7px 6px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero p {
                 font-size: 16px;
+            }
+
+            .projects-section {
+                padding-top: 55px;
+            }
+
+            .project {
+                padding: 23px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav class="navbar">
+
     <div class="nav-container">
 
         <a href="index.html" class="logo">
@@ -229,149 +508,271 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="index.html">Start</a></li>
-            <li><a href="projects.html" class="active">Projekte</a></li>
-            <li><a href="kb-pack.html">KB Pack</a></li>
-            <li><a href="kb-pack-info.html">Infos</a></li>
+
+            <li>
+                <a href="index.html">
+                    Start
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html" class="active">
+                    Projekte
+                </a>
+            </li>
+
+            <li>
+                <a href="kb-pack.html">
+                    KB Pack
+                </a>
+            </li>
+
+            <li>
+                <a href="kb-pack-info.html">
+                    Infos
+                </a>
+            </li>
+
         </ul>
 
     </div>
+
 </nav>
 
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
-    <h1>Unsere <span>Projekte</span></h1>
 
-    <p>
-        Hier findest du unsere Minecraft Mods, Packs und
-        weitere Projekte von KB Mod Studios.
-    </p>
-</header>
+    <div class="hero-content">
 
-<main class="container">
+        <div class="badge">
+            KB Mod Studios
+        </div>
 
-    <div class="projects">
+        <h1>
+            Unsere <span>Projekte</span>
+        </h1>
 
-        <!-- PROJEKT 1 -->
-        <article class="project">
-
-            <div class="project-icon">📦</div>
-
-            <h2>KB Pack</h2>
-
-            <p>
-                Unser eigenes Minecraft Pack mit verschiedenen
-                Funktionen und Erweiterungen.
-            </p>
-
-            <span class="tag">Minecraft</span>
-            <span class="tag">Pack</span>
-
-            <div class="project-buttons">
-
-                <!-- HIER DEINEN MODRINTH-LINK EINTRAGEN -->
-                <a
-                    href="https://modrinth.com/organization/kb-mod-studios"
-                    target="_blank"
-                    class="btn btn-primary">
-                    Auf Modrinth
-                </a>
-
-                <a href="kb-pack.html" class="btn btn-secondary">
-                    Mehr erfahren
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJEKT 2 -->
-        <article class="project">
-
-            <div class="project-icon">🧩</div>
-
-            <h2>Dein Mod-Projekt</h2>
-
-            <p>
-                Beschreibung deines zweiten Projekts.
-                Ersetze diesen Text durch die Beschreibung deiner Mod.
-            </p>
-
-            <span class="tag">Mod</span>
-            <span class="tag">Minecraft</span>
-
-            <div class="project-buttons">
-
-                <a
-                    href="https://modrinth.com/organization/kb-mod-studios"
-                    target="_blank"
-                    class="btn btn-primary">
-                    Auf Modrinth
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJEKT 3 -->
-        <article class="project">
-
-            <div class="project-icon">⚙️</div>
-
-            <h2>Weiteres Projekt</h2>
-
-            <p>
-                Hier kannst du ein weiteres Projekt von
-                KB Mod Studios vorstellen.
-            </p>
-
-            <span class="tag">Projekt</span>
-
-            <div class="project-buttons">
-
-                <a
-                    href="https://modrinth.com/organization/kb-mod-studios"
-                    target="_blank"
-                    class="btn btn-primary">
-                    Auf Modrinth
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJEKT 4 -->
-        <article class="project">
-
-            <div class="project-icon">🌱</div>
-
-            <h2>Coming Soon</h2>
-
-            <p>
-                Hier könnte bald ein neues Projekt von
-                KB Mod Studios erscheinen.
-            </p>
-
-            <span class="tag">Coming Soon</span>
-
-        </article>
+        <p>
+            Entdecke die Projekte von KB Mod Studios
+            und erfahre mehr über unsere Minecraft-Mods
+            und Packs.
+        </p>
 
     </div>
 
-    <p class="info">
-        Weitere Projekte findest du auf unserer Modrinth-Seite.
-    </p>
+</header>
 
-</main>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Projekte
+            </h2>
+
+            <p>
+                Zwei Projekte. Eine Idee: Minecraft erweitern.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- =====================
+                 PROJEKT 1
+            ====================== -->
+
+            <article class="project">
+
+                <div class="project-icon">
+                    📦
+                </div>
+
+                <h2>
+                    KB Pack
+                </h2>
+
+                <p class="project-description">
+                    Das KB Pack ist eines unserer zentralen
+                    Projekte. Hier findest du eigene Inhalte,
+                    Funktionen und Erweiterungen für Minecraft.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Minecraft
+                    </span>
+
+                    <span class="tag">
+                        Pack
+                    </span>
+
+                    <span class="tag">
+                        KB Mod Studios
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <a
+                        href="kb-pack.html"
+                        class="btn btn-primary">
+
+                        KB Pack
+                    </a>
+
+                    <a
+                        href="https://modrinth.com/organization/kb-mod-studios"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary">
+
+                        Modrinth
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =====================
+                 PROJEKT 2
+            ====================== -->
+
+            <article class="project">
+
+                <div class="project-icon">
+                    🧩
+                </div>
+
+                <h2>
+                    Zweites Projekt
+                </h2>
+
+                <p class="project-description">
+                    Hier kannst du dein zweites Projekt
+                    von KB Mod Studios vorstellen.
+                    Beschreibung, Features und weitere
+                    Informationen können hier stehen.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Minecraft
+                    </span>
+
+                    <span class="tag">
+                        Mod
+                    </span>
+
+                    <span class="tag">
+                        KB Mod Studios
+                    </span>
+
+                </div>
+
+                <div class="project-buttons">
+
+                    <!--
+                        ERSETZE DEN LINK DURCH
+                        DEN MODRINTH-LINK DES PROJEKTS
+                    -->
+
+                    <a
+                        href="https://modrinth.com/organization/kb-mod-studios"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary">
+
+                        Modrinth
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="bottom-info">
+
+            Weitere Projekte werden hier hinzugefügt,
+            sobald sie veröffentlicht werden.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-    © <span id="year"></span> KB Mod Studios
+
+    © <span id="year"></span>
+    KB Mod Studios
+
 </footer>
 
+
+
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /*
+        Automatisches Jahr im Footer
+    */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /*
+        Kleine Animation beim Laden
+    */
+
+    document.querySelectorAll(".project").forEach(
+        function(project, index) {
+
+            project.style.opacity = "0";
+            project.style.transform = "translateY(15px)";
+
+            setTimeout(function() {
+
+                project.style.transition =
+                    "opacity 0.5s ease, transform 0.5s ease";
+
+                project.style.opacity = "1";
+                project.style.transform = "translateY(0)";
+
+            }, 100 + index * 150);
+
+        }
+    );
+
 </script>
 
 </body>
