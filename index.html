@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KB Mod Studios – Minecraft Mods, Projekte und das KB Pack.">
+    <title>KB Mod Studios | Startseite</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b10;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 11, 16, 0.88);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #55d68b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #aeb8c5;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: white;
+            background: #151c25;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 20px 80px;
+            background:
+                radial-gradient(circle at 50% 30%, rgba(48, 173, 105, 0.18), transparent 35%),
+                linear-gradient(180deg, #080b10, #0b1017);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(85,214,139,0.3);
+            background: rgba(85,214,139,0.08);
+            color: #72e7a3;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+        }
+
+        h1 span {
+            color: #55d68b;
+        }
+
+        .hero p {
+            color: #aeb8c5;
+            max-width: 680px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #55d68b;
+            color: #06100a;
+        }
+
+        .btn-primary:hover {
+            background: #72e7a3;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #151c25;
+            border: 1px solid #26313d;
+        }
+
+        .btn-secondary:hover {
+            background: #1d2732;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #8f9baa;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #10151d;
+            border: 1px solid #202934;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(85,214,139,0.35);
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #929dab;
+        }
+
+        .pack-section {
+            background: #0d1219;
+        }
+
+        .pack-box {
+            background: linear-gradient(135deg, #121b17, #10151d);
+            border: 1px solid #294a38;
+            border-radius: 18px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .pack-box p {
+            color: #a1abb7;
+            margin: 15px 0 25px;
+        }
+
+        footer {
+            border-top: 1px solid #202934;
+            padding: 35px 20px;
+            text-align: center;
+            color: #6f7b88;
+            background: #070a0e;
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 8px;
+                font-size: 13px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pack-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 16px;
+            }
+
+            .nav-container {
+                padding: 0 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">KB <span>MOD STUDIOS</span></a>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Start</a></li>
+            <li><a href="projects.html">Projekte</a></li>
+            <li><a href="kb-pack.html">KB Pack</a></li>
+            <li><a href="kb-pack-info.html">Infos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+
+        <div class="badge">Minecraft Modding & Projekte</div>
+
+        <h1>KB <span>Mod Studios</span></h1>
+
+        <p>
+            Wir entwickeln Minecraft-Projekte, Mods und eigene Inhalte
+            mit dem Ziel, Minecraft um neue Ideen und Features zu erweitern.
+        </p>
+
+        <div class="buttons">
+            <a href="projects.html" class="btn btn-primary">
+                Unsere Projekte
+            </a>
+
+            <a href="kb-pack.html" class="btn btn-secondary">
+                KB Pack entdecken
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Was wir machen</h2>
+            <p>Ein kleiner Einblick in KB Mod Studios.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="card">
+                <div class="icon">🧩</div>
+                <h3>Minecraft Mods</h3>
+                <p>
+                    Wir entwickeln eigene Mods und Erweiterungen
+                    für Minecraft.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📦</div>
+                <h3>Eigene Packs</h3>
+                <p>
+                    Mit dem KB Pack entwickeln wir ein eigenes
+                    Minecraft-Erlebnis.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>Neue Ideen</h3>
+                <p>
+                    Wir experimentieren mit neuen Konzepten,
+                    Features und Minecraft-Projekten.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="pack-section">
+    <div class="container">
+
+        <div class="pack-box">
+
+            <div>
+                <h2>Das KB Pack</h2>
+
+                <p>
+                    Entdecke unser eigenes Pack und erfahre mehr über
+                    Funktionen, Installation und Verwendung.
+                </p>
+
+                <a href="kb-pack.html" class="btn btn-primary">
+                    Mehr erfahren
+                </a>
+            </div>
+
+            <div style="font-size:90px;">
+                📦
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © <span id="year"></span> KB Mod Studios · Minecraft Projekte
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
