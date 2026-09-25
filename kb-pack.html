@@ -335,22 +335,6 @@
                 110px;
         }
 
-        .section-title {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-
-            margin-bottom: 8px;
-        }
-
-        .section-title p {
-            color: #7f8a97;
-        }
-
 
         /* ========================================
            INFO BOX
@@ -406,6 +390,75 @@
         .info-box li {
             margin:
                 6px 0;
+        }
+
+
+        /* ========================================
+           UPDATE LINK
+        ======================================== */
+
+        .update-link-box {
+            background:
+                linear-gradient(
+                    145deg,
+                    #111d17,
+                    #0e1511
+                );
+
+            border:
+                1px solid
+                rgba(85,214,139,0.28);
+        }
+
+        .update-link-content {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            border-radius: 12px;
+
+            background: #0b1110;
+
+            border:
+                1px solid
+                #202e27;
+        }
+
+        .update-icon {
+            width: 52px;
+            height: 52px;
+
+            min-width: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #172a20;
+
+            font-size: 27px;
+        }
+
+        .update-link-content h3 {
+            margin: 0 0 4px;
+
+            color: #f1f5f9;
+        }
+
+        .update-link-content p {
+            margin: 0;
+
+            font-size: 14px;
         }
 
 
@@ -501,35 +554,6 @@
 
 
         /* ========================================
-           CODE
-        ======================================== */
-
-        .code-box {
-            margin-top: 15px;
-
-            padding: 15px;
-
-            overflow-x: auto;
-
-            border-radius: 9px;
-
-            background: #070a0e;
-
-            border:
-                1px solid
-                #27313c;
-
-            color: #a8f0c4;
-
-            font-family:
-                Consolas,
-                monospace;
-
-            font-size: 13px;
-        }
-
-
-        /* ========================================
            WARNING
         ======================================== */
 
@@ -616,7 +640,14 @@
             }
 
             .info-box {
-                padding: 24px 20px;
+                padding:
+                    24px 20px;
+            }
+
+            .update-link-content {
+                align-items: flex-start;
+
+                flex-direction: column;
             }
 
         }
@@ -655,15 +686,17 @@
             </li>
 
             <li>
-                <a href="kb-pack.html"
+                <a
+                    href="kb-pack.html"
                     class="active">
+
                     KB Pack
+
                 </a>
             </li>
 
             <li>
-                <a
-                    href="info.html">
+                <a href="info.html">
                     Infos
                 </a>
             </li>
@@ -711,6 +744,7 @@
                 class="btn btn-primary">
 
                 Auf Modrinth
+
             </a>
 
             <a
@@ -718,6 +752,7 @@
                 class="btn btn-secondary">
 
                 Zur KB Pack Seite
+
             </a>
 
         </div>
@@ -735,7 +770,9 @@
 <main class="container">
 
 
-    <!-- ÜBER DAS PACK -->
+    <!-- ========================================
+         BESCHREIBUNG
+    ========================================= -->
 
     <section class="info-box">
 
@@ -761,7 +798,65 @@
 
 
 
-    <!-- FEATURES -->
+    <!-- ========================================
+         UPDATE LINK
+    ========================================= -->
+
+    <section class="info-box update-link-box">
+
+        <h2>
+            📋 KB Pack Updates
+        </h2>
+
+        <p>
+            Das KB Pack wird weiterentwickelt und erhält
+            regelmäßig neue Versionen. Erfahre hier,
+            was neu ist, was geändert wurde und welche
+            Fehler behoben wurden.
+        </p>
+
+
+        <div class="update-link-content">
+
+            <div class="update-icon">
+                🚀
+            </div>
+
+            <div>
+
+                <h3>
+                    Neuigkeiten zum KB Pack
+                </h3>
+
+                <p>
+                    Alle Updates und Versionsänderungen
+                    findest du auf der Update-Seite.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="kb-pack-updates.html"
+                class="btn btn-primary">
+
+                📋 Zu den KB Pack Updates
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FEATURES
+    ========================================= -->
 
     <section class="info-box">
 
@@ -854,7 +949,9 @@
 
 
 
-    <!-- INSTALLATION -->
+    <!-- ========================================
+         INSTALLATION
+    ========================================= -->
 
     <section class="info-box">
 
@@ -991,7 +1088,9 @@
 
 
 
-    <!-- EMPFOHLENE EINSTELLUNGEN -->
+    <!-- ========================================
+         EINSTELLUNGEN
+    ========================================= -->
 
     <section class="info-box">
 
@@ -1030,7 +1129,9 @@
 
 
 
-    <!-- VERSIONEN -->
+    <!-- ========================================
+         VERSIONEN
+    ========================================= -->
 
     <section class="info-box">
 
@@ -1044,15 +1145,13 @@
             KB-Pack-Projektseite.
         </p>
 
-        <div class="code-box">
-            Minecraft-Version: siehe Modrinth-Projektseite
-        </div>
-
     </section>
 
 
 
-    <!-- FAQ -->
+    <!-- ========================================
+         FAQ
+    ========================================= -->
 
     <section class="info-box">
 
@@ -1083,8 +1182,7 @@
 
             <p>
                 Das hängt von der jeweiligen Version
-                des KB Packs ab. Die unterstützten
-                Versionen stehen auf der Projektseite.
+                des KB Packs ab.
             </p>
 
         </div>
@@ -1098,8 +1196,7 @@
 
             <p>
                 Das hängt von den jeweiligen Packs und
-                deren Funktionen ab. Bei Problemen solltest
-                du zunächst nur das KB Pack aktivieren.
+                deren Funktionen ab.
             </p>
 
         </div>
@@ -1108,12 +1205,14 @@
         <div class="faq">
 
             <div class="faq-question">
-                Wo bekomme ich Updates?
+                Wo finde ich die neuesten Updates?
             </div>
 
             <p>
-                Neue Versionen werden über die offizielle
-                Projektseite veröffentlicht.
+                Klicke oben auf
+                „Zu den KB Pack Updates“.
+                Dort findest du die Änderungen
+                der einzelnen Versionen.
             </p>
 
         </div>
@@ -1122,7 +1221,9 @@
 
 
 
-    <!-- WICHTIG -->
+    <!-- ========================================
+         WICHTIG
+    ========================================= -->
 
     <section class="info-box warning">
 
@@ -1142,7 +1243,9 @@
 
 
 
-    <!-- MODRINTH -->
+    <!-- ========================================
+         MODRINTH
+    ========================================= -->
 
     <section
         class="info-box"
@@ -1166,6 +1269,7 @@
                 class="btn btn-primary">
 
                 Zur Modrinth-Seite
+
             </a>
 
         </div>
@@ -1192,17 +1296,17 @@
 
 <script>
 
-    /*
-        Automatisches Jahr
-    */
+    /* ========================================
+       AUTOMATISCHES JAHR
+    ========================================= */
 
     document.getElementById("year").textContent =
         new Date().getFullYear();
 
 
-    /*
-        Kleine Animation für Info-Boxen
-    */
+    /* ========================================
+       ANIMATION
+    ========================================= */
 
     const boxes =
         document.querySelectorAll(".info-box");
@@ -1211,6 +1315,7 @@
         function(box, index) {
 
             box.style.opacity = "0";
+
             box.style.transform =
                 "translateY(15px)";
 
