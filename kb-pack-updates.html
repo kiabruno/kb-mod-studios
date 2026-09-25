@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB Pack – Updates | KB Mod Studios</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b10;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 11, 16, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1d2631;
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #55d68b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #55d68b;
+        }
+
+        /* HEADER */
+        .hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background:
+                radial-gradient(circle at top, rgba(85, 214, 139, 0.12), transparent 45%);
+        }
+
+        .hero-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 20px;
+            background: rgba(85, 214, 139, 0.12);
+            border: 1px solid rgba(85, 214, 139, 0.3);
+            color: #72e7a3;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        /* CONTENT */
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            margin: 50px 0 25px;
+            font-size: 30px;
+        }
+
+        /* UPDATE CARD */
+        .update {
+            background: #10151d;
+            border: 1px solid #202a36;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 25px;
+            transition: 0.25s;
+        }
+
+        .update:hover {
+            transform: translateY(-3px);
+            border-color: #55d68b;
+        }
+
+        .update-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .version {
+            font-size: 25px;
+            font-weight: bold;
+            color: #72e7a3;
+        }
+
+        .date {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .update h3 {
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+
+        .update ul {
+            padding-left: 22px;
+            color: #cbd5e1;
+        }
+
+        .update li {
+            margin: 6px 0;
+        }
+
+        .new {
+            color: #72e7a3;
+        }
+
+        .changed {
+            color: #facc15;
+        }
+
+        .fixed {
+            color: #60a5fa;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 45px 0;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 20px;
+            border-radius: 10px;
+            background: #55d68b;
+            color: #07100b;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #72e7a3;
+        }
+
+        .button.secondary {
+            background: #151d27;
+            color: #e2e8f0;
+            border: 1px solid #293544;
+        }
+
+        .button.secondary:hover {
+            border-color: #55d68b;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 70px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #1d2631;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .update-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeIn 0.7s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">KB Mod Studios</a>
+
+            <div class="nav-links">
+                <a href="index.html">Start</a>
+                <a href="projects.html">Projekte</a>
+                <a href="kb-pack.html">KB Pack</a>
+                <a href="kb-pack-info.html">Infos</a>
+                <a href="kb-pack-updates.html">Updates</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero fade-in">
+        <div class="hero-icon">📦</div>
+
+        <div class="badge">
+            KB Pack Updates
+        </div>
+
+        <h1>KB Pack – Updates</h1>
+
+        <p>
+            Hier findest du alle wichtigen Änderungen, neuen Features
+            und Verbesserungen des KB Packs.
+        </p>
+    </header>
+
+
+    <!-- UPDATES -->
+    <main class="container">
+
+        <h2 class="section-title">
+            Neueste Updates
+        </h2>
+
+
+        <!-- UPDATE 1 -->
+        <article class="update fade-in">
+
+            <div class="update-header">
+                <div class="version">
+                    KB-Pack V.0.4
+                </div>
+
+                <div class="date">
+                    6.09.2026
+                </div>
+            </div>
+
+
+            <h3 class="new">
+                Deutsch
+            </h3>
+
+            <ul>
+                <li>Mehrere Fehler wurden behoben und das ESC-Menü für alle Sprachen angepasst. Das Projekt erhält vor seiner vorläufigen Archivierung noch ein letztes Update.</li>
+            </ul>
+
+
+            <h3 class="changed">
+                Englisch
+            </h3>
+
+            <ul>
+                <li>Several bugs have been fixed, and the ESC menu has been adjusted for all languages. The project will receive one more update before being archived for the time being.</li>
+            </ul>
+
+        </article>
+
+
+        <!-- UPDATE 2 -->
+        <article class="update fade-in">
+
+            <div class="update-header">
+                <div class="version">
+                    KB-Pack V.0.3
+                </div>
+
+                <div class="date">
+                    31.07.2026
+                </div>
+            </div>
+
+
+            <h3 class="new">
+                Deutsch
+            </h3>
+
+            <ul>
+                <li>Bei eineigen items und gegenstäde wurde die textur geendert. Wie beim ro gold die texstur ist jetzt wie beim gold klumpen. In der Katorogie Kampf wurden ein par items auch verbessert. Das ESC Menü ist jetzt auch für Englisch (US) Verfügbar! Und bei dem ResuchePack wurde die beschreibung angepast.</li>
+            </ul>
+
+
+            <h3 class="changed">
+                Englisch
+            </h3>
+
+            <ul>
+                <li>The textures for certain items and objects have been changed; for example, the raw gold texture now matches that of the gold lump. A few items in the "Combat" category have also been improved. The ESC menu is now available in US English, and the resource pack description has been updated.</li>
+            </ul>
+
+        </article>
+
+      <!-- UPDATE 3 -->
+      <article class="update fade-in">
+
+            <div class="update-header">
+                <div class="version">
+                    KB-Pack V.0.2
+                </div>
+
+                <div class="date">
+                    27.07.2026
+                </div>
+            </div>
+
+
+            <h3 class="new">
+                Deutsch
+            </h3>
+
+            <ul>
+                <li>KEINE ÜBERZETZUNG!</li>
+            </ul>
+
+
+            <h3 class="changed">
+                Englisch
+            </h3>
+
+            <ul>
+                <li>A few things have changed in this update, such as the Minecraft Esc menu. However, it is currently only available when the game is set to German..</li>
+            </ul>
+
+        </article>
+
+
+        <!-- BUTTONS -->
+        <div class="buttons">
+
+            <a
+                href="kb-pack.html"
+                class="button">
+                Zum KB Pack
+            </a>
+
+            <a
+                href="kb-pack-info.html"
+                class="button secondary">
+                KB Pack Infos
+            </a>
+
+            <a
+                href="https://modrinth.com/organization/kb-mod-studios"
+                target="_blank"
+                class="button secondary">
+                Modrinth
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        © <span id="year"></span> KB Mod Studios – Alle Rechte vorbehalten.
+    </footer>
+
+
+    <script>
+        // Aktuelles Jahr automatisch anzeigen
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Einfache Animation beim Laden
+        document.querySelectorAll(".fade-in").forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+
+</body>
+</html>
