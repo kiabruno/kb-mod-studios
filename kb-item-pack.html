@@ -7,7 +7,7 @@
     <title>KB Item Pack – KB Mod Studios</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="kb-logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
@@ -86,7 +86,11 @@
             text-align: center;
 
             background:
-                radial-gradient(circle at top, #14231c 0%, #080b10 55%);
+                radial-gradient(
+                    circle at top,
+                    #14231c 0%,
+                    #080b10 55%
+                );
         }
 
         .hero-content {
@@ -152,15 +156,15 @@
             background: #1d2630;
         }
 
-        /* GENERAL */
+        /* SECTIONS */
+        section {
+            border-bottom: 1px solid #141b23;
+        }
+
         .container {
             max-width: 1100px;
             margin: auto;
             padding: 80px 24px;
-        }
-
-        section {
-            border-bottom: 1px solid #141b23;
         }
 
         .section-title {
@@ -177,7 +181,74 @@
             color: #8e9aa8;
         }
 
-        /* CARDS */
+        /* PACK BOX */
+        .pack-box {
+            background: #10151d;
+            border: 1px solid #202a35;
+            border-radius: 14px;
+            padding: 30px;
+
+            transition: 0.25s;
+        }
+
+        .pack-box:hover {
+            border-color: #55d68b;
+        }
+
+        .pack-box p {
+            color: #b2bdc9;
+            margin-bottom: 15px;
+        }
+
+        .pack-box ul {
+            padding-left: 22px;
+            color: #b2bdc9;
+        }
+
+        .pack-box li {
+            margin-bottom: 8px;
+        }
+
+        /* ITEM CARDS */
+        .items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .item {
+            background: #10151d;
+            border: 1px solid #202a35;
+            border-radius: 12px;
+
+            padding: 25px 15px;
+            text-align: center;
+
+            transition: 0.2s;
+        }
+
+        .item:hover {
+            transform: translateY(-4px);
+            border-color: #55d68b;
+        }
+
+        .item-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .item h3 {
+            font-size: 17px;
+            color: #e9eef5;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #8995a3;
+            margin-top: 5px;
+        }
+
+        /* FEATURES */
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -212,64 +283,37 @@
             color: #aab5c1;
         }
 
-        /* PACK INFO */
-        .pack-box {
+        /* UPDATES */
+        .update-link-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+
             background: #10151d;
             border: 1px solid #202a35;
             border-radius: 14px;
+
             padding: 30px;
         }
 
-        .pack-box p {
-            color: #b2bdc9;
-            margin-bottom: 15px;
+        .update-link-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .pack-box ul {
-            padding-left: 22px;
-            color: #b2bdc9;
-        }
-
-        .pack-box li {
-            margin-bottom: 8px;
-        }
-
-        /* ITEM SHOWCASE */
-        .items {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .item {
-            background: #10151d;
-            border: 1px solid #202a35;
-            border-radius: 12px;
-            padding: 25px 15px;
-            text-align: center;
-
-            transition: 0.2s;
-        }
-
-        .item:hover {
-            transform: translateY(-4px);
-            border-color: #55d68b;
-        }
-
-        .item-icon {
+        .update-icon {
             font-size: 45px;
-            margin-bottom: 10px;
         }
 
-        .item h3 {
-            font-size: 17px;
-            color: #e9eef5;
+        .update-link-content h3 {
+            color: #72e7a3;
+            margin-bottom: 5px;
         }
 
-        .item p {
-            font-size: 14px;
-            color: #8995a3;
-            margin-top: 5px;
+        .update-link-content p {
+            color: #9da9b6;
         }
 
         /* INSTALLATION */
@@ -286,6 +330,7 @@
             background: #10151d;
             border: 1px solid #202a35;
             border-radius: 12px;
+
             padding: 20px;
         }
 
@@ -333,12 +378,14 @@
         footer {
             border-top: 1px solid #1d2630;
             padding: 30px 24px;
+
             text-align: center;
             color: #71808f;
         }
 
         /* RESPONSIVE */
         @media (max-width: 850px) {
+
             .cards {
                 grid-template-columns: 1fr;
             }
@@ -361,9 +408,19 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+
+            .update-link-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .update-link-content {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 500px) {
+
             .items {
                 grid-template-columns: 1fr;
             }
@@ -379,6 +436,7 @@
 
     <!-- NAVIGATION -->
     <nav>
+
         <div class="nav-container">
 
             <a href="index.html" class="logo">
@@ -386,14 +444,31 @@
             </a>
 
             <div class="nav-links">
-                <a href="index.html">Start</a>
-                <a href="projects.html">Projekte</a>
-                <a href="kb-pack.html">KB Pack</a>
-                <a href="kb-item-pack.html" class="active">KB Item Pack</a>
-                <a href="kb-pack-info.html">Infos</a>
+
+                <a href="index.html">
+                    Start
+                </a>
+
+                <a href="projects.html">
+                    Projekte
+                </a>
+
+                <a href="kb-pack.html">
+                    KB Pack
+                </a>
+
+                <a href="kb-item-pack.html" class="active">
+                    KB Item Pack
+                </a>
+
+                <a href="info.html">
+                    Infos
+                </a>
+
             </div>
 
         </div>
+
     </nav>
 
 
@@ -423,11 +498,11 @@
             <div class="buttons">
 
                 <a
-                    href="https://modrinth.com/organization/kb-item-pack"
+                    href="https://modrinth.com/organization/kb-mod-studios"
                     target="_blank"
                     class="btn btn-primary"
                 >
-                    Auf Modrinth
+                    Modrinth
                 </a>
 
             </div>
@@ -443,12 +518,16 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>📦 Was ist das KB Item Pack?</h2>
+
+                <h2>
+                    📦 Was ist das KB Item Pack?
+                </h2>
 
                 <p>
-                    Eine Erweiterung für Minecraft mit zusätzlichen Items
-                    und Blöcken.
+                    Eine Erweiterung für Minecraft mit zusätzlichen
+                    Items und Blöcken.
                 </p>
+
             </div>
 
             <div class="pack-box">
@@ -465,10 +544,23 @@
                 </p>
 
                 <ul>
-                    <li>Neue Items und Blöcke</li>
-                    <li>Besondere Dekorationen</li>
-                    <li>Items für Server und Maps</li>
-                    <li>Eigene Designs im KB-Stil</li>
+
+                    <li>
+                        Neue Items und Blöcke
+                    </li>
+
+                    <li>
+                        Besondere Dekorationen
+                    </li>
+
+                    <li>
+                        Items für Server und Maps
+                    </li>
+
+                    <li>
+                        Eigene Designs im KB-Stil
+                    </li>
+
                 </ul>
 
             </div>
@@ -484,37 +576,84 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>✨ Beispiele</h2>
+
+                <h2>
+                    ✨ Beispiele
+                </h2>
 
                 <p>
                     Einige der Items, die im KB Item Pack enthalten sein können.
                 </p>
+
             </div>
 
             <div class="items">
 
                 <div class="item">
-                    <div class="item-icon">💰</div>
-                    <h3>Geld-Block</h3>
-                    <p>Ein besonderer Block für Wirtschaftssysteme.</p>
+
+                    <div class="item-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Geld-Block
+                    </h3>
+
+                    <p>
+                        Ein besonderer Block für Wirtschaftssysteme.
+                    </p>
+
                 </div>
 
-                <div class="item">
-                    <div class="item-icon">💎</div>
-                    <h3>Neue Items</h3>
-                    <p>Zusätzliche Gegenstände für deine Welt.</p>
-                </div>
 
                 <div class="item">
-                    <div class="item-icon">🧱</div>
-                    <h3>Deko-Blöcke</h3>
-                    <p>Neue Möglichkeiten zum Bauen und Dekorieren.</p>
+
+                    <div class="item-icon">
+                        💎
+                    </div>
+
+                    <h3>
+                        Neue Items
+                    </h3>
+
+                    <p>
+                        Zusätzliche Gegenstände für deine Welt.
+                    </p>
+
                 </div>
 
+
                 <div class="item">
-                    <div class="item-icon">⭐</div>
-                    <h3>Spezial-Items</h3>
-                    <p>Besondere Items für eigene Projekte.</p>
+
+                    <div class="item-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Deko-Blöcke
+                    </h3>
+
+                    <p>
+                        Neue Möglichkeiten zum Bauen und Dekorieren.
+                    </p>
+
+                </div>
+
+
+                <div class="item">
+
+                    <div class="item-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Spezial-Items
+                    </h3>
+
+                    <p>
+                        Besondere Items für eigene Projekte.
+                    </p>
+
                 </div>
 
             </div>
@@ -530,49 +669,127 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>🚀 Features</h2>
+
+                <h2>
+                    🚀 Features
+                </h2>
 
                 <p>
                     Das bietet das KB Item Pack.
                 </p>
+
             </div>
 
             <div class="cards">
 
                 <div class="card">
-                    <div class="card-icon">🧱</div>
 
-                    <h3>Neue Blöcke</h3>
+                    <div class="card-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Neue Blöcke
+                    </h3>
 
                     <p>
                         Zusätzliche Blöcke für kreative Bauwerke
                         und individuelle Minecraft-Welten.
                     </p>
+
                 </div>
 
 
                 <div class="card">
-                    <div class="card-icon">💰</div>
 
-                    <h3>Geld & Wirtschaft</h3>
+                    <div class="card-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Geld & Wirtschaft
+                    </h3>
 
                     <p>
                         Items wie ein Geld-Block können für
                         Server-Wirtschaften und Shops verwendet werden.
                     </p>
+
                 </div>
 
 
                 <div class="card">
-                    <div class="card-icon">🎨</div>
 
-                    <h3>Eigene Designs</h3>
+                    <div class="card-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Eigene Designs
+                    </h3>
 
                     <p>
                         Die Items erhalten ein eigenes Design,
                         passend zum KB Mod Studios Stil.
                     </p>
+
                 </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPDATES -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    📋 KB Item Pack Updates
+                </h2>
+
+                <p>
+                    Erfahre, was sich in den einzelnen Versionen geändert hat.
+                </p>
+
+            </div>
+
+
+            <div class="update-link-box">
+
+                <div class="update-link-content">
+
+                    <div class="update-icon">
+                        🚀
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Neuigkeiten zum KB Item Pack
+                        </h3>
+
+                        <p>
+                            Neue Items, Änderungen und Fehlerbehebungen
+                            findest du auf unserer Update-Seite.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="kb-item-pack-updates.html"
+                    class="btn btn-primary"
+                >
+                    📋 Zu den Updates
+                </a>
 
             </div>
 
@@ -588,7 +805,9 @@
 
             <div class="section-title">
 
-                <h2>📥 Installation</h2>
+                <h2>
+                    📥 Installation
+                </h2>
 
                 <p>
                     So kannst du das KB Item Pack verwenden.
@@ -607,7 +826,9 @@
 
                     <div>
 
-                        <h3>Pack herunterladen</h3>
+                        <h3>
+                            Pack herunterladen
+                        </h3>
 
                         <p>
                             Lade die aktuelle Version des KB Item Packs
@@ -627,7 +848,9 @@
 
                     <div>
 
-                        <h3>Minecraft öffnen</h3>
+                        <h3>
+                            Minecraft öffnen
+                        </h3>
 
                         <p>
                             Starte Minecraft mit der für das Pack
@@ -647,7 +870,9 @@
 
                     <div>
 
-                        <h3>Pack installieren</h3>
+                        <h3>
+                            Pack installieren
+                        </h3>
 
                         <p>
                             Folge den Installationsanweisungen
@@ -667,7 +892,9 @@
 
                     <div>
 
-                        <h3>Fertig!</h3>
+                        <h3>
+                            Fertig!
+                        </h3>
 
                         <p>
                             Jetzt kannst du die neuen Items
@@ -688,7 +915,9 @@
     <!-- CTA -->
     <section class="cta">
 
-        <h2>📦 Bereit für mehr Items?</h2>
+        <h2>
+            📦 Bereit für mehr Items?
+        </h2>
 
         <p>
             Entdecke das KB Item Pack und erweitere deine Minecraft-Welt.
@@ -720,15 +949,41 @@
     <footer>
 
         © <span id="year"></span>
-        2026 KB Mod Studios
+        KB Mod Studios · Minecraft Projekte
 
     </footer>
 
 
     <!-- JAVASCRIPT -->
     <script>
+
+        // Aktuelles Jahr automatisch einsetzen
         document.getElementById("year").textContent =
             new Date().getFullYear();
+
+        // Sanftes Scrollen für interne Links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener("click", function(event) {
+
+                const target = document.querySelector(
+                    this.getAttribute("href")
+                );
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            });
+
+        });
+
     </script>
 
 </body>
