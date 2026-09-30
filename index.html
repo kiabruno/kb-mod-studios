@@ -1,14 +1,23 @@
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KB Mod Studios – Wir Machen Minecraft Mods Projekte und Vieles Mehr. Schaue einfach bei Uns Vorbei und Lasse dich überraschen!">
+
+    <meta name="description" content="KB Mod Studios – Wir machen Minecraft Mods, Projekte und vieles mehr.">
+
     <title>KB Mod Studios | Startseite</title>
 
+    <!-- Website Icon -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
+
+        /* ==============================
+           GRUNDSTIL
+        ============================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -23,15 +32,21 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #0b0d10;
             color: #ffffff;
+            min-height: 100vh;
         }
 
-        /* NAVIGATION */
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
+
+            z-index: 9999;
 
             display: flex;
             align-items: center;
@@ -39,16 +54,17 @@
 
             padding: 18px 7%;
 
-            background: rgba(11, 13, 16, 0.85);
+            background: rgba(11, 13, 16, 0.95);
             backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .logo {
             font-size: 22px;
             font-weight: 800;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -57,22 +73,35 @@
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            align-items: center;
+            gap: 25px;
+
+            list-style: none;
+        }
+
+        .nav-links li {
             list-style: none;
         }
 
         .nav-links a {
             color: #c9cdd2;
             text-decoration: none;
+
             font-size: 15px;
-            transition: 0.2s;
+            font-weight: 600;
+
+            transition: 0.2s ease;
         }
 
         .nav-links a:hover {
             color: #55d68a;
         }
 
-        /* HERO */
+
+        /* ==============================
+           STARTSEITE
+        ============================== */
+
         .hero {
             min-height: 100vh;
 
@@ -81,34 +110,43 @@
             justify-content: center;
 
             text-align: center;
-            padding: 120px 20px 80px;
+
+            padding: 140px 20px 80px;
 
             background:
-                radial-gradient(circle at 50% 20%, rgba(85,214,138,0.16), transparent 35%),
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(85, 214, 138, 0.16),
+                    transparent 40%
+                ),
                 #0b0d10;
         }
 
         .hero-content {
+            width: 100%;
             max-width: 850px;
         }
 
         .badge {
             display: inline-block;
-            padding: 8px 14px;
-            margin-bottom: 22px;
 
-            border: 1px solid rgba(85,214,138,0.35);
+            padding: 8px 15px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(85, 214, 138, 0.35);
             border-radius: 999px;
 
             color: #55d68a;
-            background: rgba(85,214,138,0.08);
+
+            background: rgba(85, 214, 138, 0.08);
 
             font-size: 13px;
         }
 
         .hero h1 {
-            font-size: clamp(48px, 8vw, 90px);
+            font-size: clamp(45px, 8vw, 90px);
             line-height: 1;
+
             margin-bottom: 25px;
         }
 
@@ -117,32 +155,43 @@
         }
 
         .hero p {
+            max-width: 680px;
+            margin: auto;
+
             color: #aeb4bb;
+
             font-size: 19px;
             line-height: 1.7;
-            max-width: 650px;
-            margin: auto;
         }
 
-        .buttons {
-            margin-top: 35px;
 
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .buttons {
             display: flex;
             justify-content: center;
+            align-items: center;
+
             gap: 14px;
+
+            margin-top: 35px;
+
             flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
 
-            padding: 13px 22px;
+            padding: 13px 23px;
+
             border-radius: 9px;
 
             text-decoration: none;
             font-weight: 700;
 
-            transition: 0.2s;
+            transition: 0.2s ease;
         }
 
         .button-primary {
@@ -156,16 +205,22 @@
         }
 
         .button-secondary {
-            color: white;
-            border: 1px solid #30353b;
+            color: #ffffff;
+
             background: #15181c;
+
+            border: 1px solid #30353b;
         }
 
         .button-secondary:hover {
             border-color: #55d68a;
         }
 
-        /* SECTIONS */
+
+        /* ==============================
+           ALLGEMEINE SECTIONS
+        ============================== */
+
         section {
             padding: 100px 7%;
         }
@@ -184,29 +239,39 @@
             color: #8f969e;
         }
 
-        /* PROJECTS */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
 
+        /* ==============================
+           PROJEKTE
+        ============================== */
+
+        .projects {
             max-width: 1100px;
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 22px;
         }
 
         .card {
             padding: 28px;
 
             background: #121519;
+
             border: 1px solid #24292f;
+
             border-radius: 16px;
 
-            transition: 0.25s;
+            transition: 0.25s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: rgba(85,214,138,0.5);
+
+            border-color: rgba(85, 214, 138, 0.5);
         }
 
         .card-icon {
@@ -221,7 +286,8 @@
 
             border-radius: 12px;
 
-            background: rgba(85,214,138,0.1);
+            background: rgba(85, 214, 138, 0.1);
+
             color: #55d68a;
 
             font-size: 25px;
@@ -229,22 +295,31 @@
 
         .card h3 {
             margin-bottom: 10px;
+
             font-size: 21px;
         }
 
         .card p {
             color: #949ba3;
+
             line-height: 1.6;
+
             margin-bottom: 20px;
         }
 
         .card a {
             color: #55d68a;
+
             text-decoration: none;
+
             font-weight: 700;
         }
 
-        /* PACKS */
+
+        /* ==============================
+           PACK BEREICH
+        ============================== */
+
         .pack-section {
             background: #0e1114;
         }
@@ -254,7 +329,10 @@
             margin: auto;
 
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
             gap: 30px;
         }
 
@@ -262,42 +340,60 @@
             padding: 35px;
 
             border-radius: 18px;
+
             border: 1px solid #292e34;
 
-            background: linear-gradient(
-                145deg,
-                #15191d,
-                #0e1114
-            );
+            background:
+                linear-gradient(
+                    145deg,
+                    #15191d,
+                    #0e1114
+                );
         }
 
         .pack-box h3 {
             font-size: 27px;
+
             margin-bottom: 15px;
         }
 
         .pack-box p {
             color: #9ca3aa;
+
             line-height: 1.7;
+
             margin-bottom: 22px;
         }
 
-        /* INFO */
+
+        /* ==============================
+           INFO
+        ============================== */
+
         .info {
             max-width: 850px;
+
             margin: auto;
+
             text-align: center;
         }
 
         .info p {
             color: #a3a9b0;
+
             font-size: 17px;
+
             line-height: 1.8;
         }
 
-        /* UPDATES */
+
+        /* ==============================
+           UPDATES
+        ============================== */
+
         .updates {
             max-width: 800px;
+
             margin: auto;
         }
 
@@ -307,13 +403,17 @@
             margin-bottom: 15px;
 
             background: #121519;
+
             border: 1px solid #24292f;
+
             border-radius: 13px;
         }
 
         .update-date {
             color: #55d68a;
+
             font-size: 13px;
+
             margin-bottom: 8px;
         }
 
@@ -323,10 +423,15 @@
 
         .update p {
             color: #979ea6;
+
             line-height: 1.6;
         }
 
-        /* FOOTER */
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
         footer {
             padding: 35px 7%;
 
@@ -335,6 +440,7 @@
             border-top: 1px solid #22272d;
 
             color: #747b83;
+
             background: #090b0d;
         }
 
@@ -342,39 +448,78 @@
             color: #55d68a;
         }
 
-        /* MOBILE */
-        @media (max-width: 750px) {
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 850px) {
 
             nav {
+                flex-direction: column;
+
+                gap: 15px;
+
                 padding: 15px 5%;
             }
 
             .nav-links {
-                gap: 12px;
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 12px 18px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .hero {
+                padding-top: 180px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .nav-links {
+                gap: 10px 14px;
             }
 
             .nav-links a {
                 font-size: 12px;
             }
 
-            .logo {
-                font-size: 17px;
+            .hero h1 {
+                font-size: 45px;
             }
 
-            .pack {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 16px;
             }
 
-            section {
-                padding: 75px 5%;
-            }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- ==========================================
+     NAVIGATION
+=========================================== -->
+
 <nav>
 
     <div class="logo">
@@ -382,6 +527,354 @@
     </div>
 
     <ul class="nav-links">
-        <li><a href="#start">Start</a></li>
-        <li><a href="#projekte">Projekte</a></li>
+
+        <!-- ALLE LINKS FÜHREN ZUR WARTUNGSSEITE -->
+
         <li>
+            <a href="wartung.html">Start</a>
+        </li>
+
+        <li>
+            <a href="wartung.html">Projekte</a>
+        </li>
+
+        <li>
+            <a href="wartung.html">KB Pack</a>
+        </li>
+
+        <li>
+            <a href="wartung.html">KB Item Pack</a>
+        </li>
+
+        <li>
+            <a href="wartung.html">Info</a>
+        </li>
+
+        <li>
+            <a href="wartung.html">Updates</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ==========================================
+     START
+=========================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            Minecraft Modding &amp; Content
+        </div>
+
+        <h1>
+            KB <span>Mod Studios</span>
+        </h1>
+
+        <p>
+            Willkommen bei KB Mod Studios.
+            Wir entwickeln Minecraft Mods, Packs und
+            weitere Inhalte für die Minecraft-Community.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button button-primary"
+                href="wartung.html"
+            >
+                Website betreten
+            </a>
+
+            <a
+                class="button button-secondary"
+                href="https://modrinth.com/organization/kb-mod-studios"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Modrinth
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     PROJEKTE
+=========================================== -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Projekte</h2>
+
+        <p>
+            Unsere aktuellen Minecraft-Projekte.
+        </p>
+
+    </div>
+
+    <div class="projects">
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⚒
+            </div>
+
+            <h3>KB Mod</h3>
+
+            <p>
+                Informationen zu unseren Minecraft Mods
+                findest du auf unserer Projektseite.
+            </p>
+
+            <a href="wartung.html">
+                Mehr erfahren →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ◆
+            </div>
+
+            <h3>Neues Projekt</h3>
+
+            <p>
+                Weitere Projekte von KB Mod Studios
+                werden hier veröffentlicht.
+            </p>
+
+            <a href="wartung.html">
+                Mehr erfahren →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                +
+            </div>
+
+            <h3>Weitere Projekte</h3>
+
+            <p>
+                Neue Mods und Projekte sind bereits
+                in Planung.
+            </p>
+
+            <a href="wartung.html">
+                Bald verfügbar →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     KB PACK
+=========================================== -->
+
+<section class="pack-section">
+
+    <div class="section-title">
+
+        <h2>KB Pack</h2>
+
+        <p>
+            Das Pack von KB Mod Studios.
+        </p>
+
+    </div>
+
+    <div class="pack">
+
+        <div class="pack-box">
+
+            <h3>KB Pack</h3>
+
+            <p>
+                Hier findest du zukünftig alle Informationen,
+                Downloads und Updates zum KB Pack.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="wartung.html"
+            >
+                Zum KB Pack
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     KB ITEM PACK
+=========================================== -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>KB Item Pack</h2>
+
+        <p>
+            Zusätzliche Items und Inhalte für Minecraft.
+        </p>
+
+    </div>
+
+    <div class="pack">
+
+        <div class="pack-box">
+
+            <h3>KB Item Pack</h3>
+
+            <p>
+                Informationen, Versionen und Downloads
+                des KB Item Packs findest du hier.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="wartung.html"
+            >
+                Zum Item Pack
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     INFO
+=========================================== -->
+
+<section class="pack-section">
+
+    <div class="section-title">
+
+        <h2>Info</h2>
+
+        <p>
+            Über KB Mod Studios
+        </p>
+
+    </div>
+
+    <div class="info">
+
+        <p>
+            KB Mod Studios entwickelt eigene Minecraft Mods,
+            Packs und weitere Inhalte.
+            Wir möchten kreative und interessante Projekte
+            für die Minecraft-Community erstellen.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     UPDATES
+=========================================== -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Updates</h2>
+
+        <p>
+            Neuigkeiten von KB Mod Studios.
+        </p>
+
+    </div>
+
+    <div class="updates">
+
+        <div class="update">
+
+            <div class="update-date">
+                AKTUELL
+            </div>
+
+            <h3>
+                Neue Mod in Überprüfung
+            </h3>
+
+            <p>
+                Eine neue Mod wurde bei Modrinth eingereicht
+                und befindet sich derzeit in der Überprüfung.
+            </p>
+
+        </div>
+
+
+        <div class="update">
+
+            <div class="update-date">
+                KB MOD STUDIOS
+            </div>
+
+            <h3>
+                Website gestartet
+            </h3>
+
+            <p>
+                Die Website von KB Mod Studios ist online.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>KB Mod Studios</strong>.
+        Alle Rechte vorbehalten.
+    </p>
+
+    <p style="margin-top: 8px;">
+        Nicht mit Mojang oder Microsoft verbunden.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
+```
