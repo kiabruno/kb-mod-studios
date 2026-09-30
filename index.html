@@ -4,16 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="KB Mod Studios – Wir machen Minecraft Mods, Projekte und vieles mehr.">
-
+    <meta name="description" content="KB Mod Studios – Wir Machen Minecraft Mods Projekte und Vieles Mehr. Schaue einfach bei Uns Vorbei und Lasse dich überraschen!">
     <title>KB Mod Studios | Startseite</title>
 
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -28,21 +24,15 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #0b0d10;
             color: #ffffff;
-            min-height: 100vh;
         }
 
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
+        /* NAVIGATION */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-
-            z-index: 9999;
+            z-index: 1000;
 
             display: flex;
             align-items: center;
@@ -50,8 +40,7 @@
 
             padding: 18px 7%;
 
-            background: rgba(11, 13, 16, 0.95);
-
+            background: rgba(11, 13, 16, 0.85);
             backdrop-filter: blur(12px);
 
             border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -61,7 +50,6 @@
             font-size: 22px;
             font-weight: 800;
             letter-spacing: 1px;
-            white-space: nowrap;
         }
 
         .logo span {
@@ -70,36 +58,22 @@
 
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 25px;
-
-            list-style: none;
-        }
-
-        .nav-links li {
+            gap: 28px;
             list-style: none;
         }
 
         .nav-links a {
             color: #c9cdd2;
-
             text-decoration: none;
-
             font-size: 15px;
-            font-weight: 600;
-
-            transition: 0.2s ease;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
             color: #55d68a;
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
-
+        /* HERO */
         .hero {
             min-height: 100vh;
 
@@ -108,45 +82,34 @@
             justify-content: center;
 
             text-align: center;
-
-            padding: 140px 20px 80px;
+            padding: 120px 20px 80px;
 
             background:
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(85,214,138,0.16),
-                    transparent 40%
-                ),
+                radial-gradient(circle at 50% 20%, rgba(85,214,138,0.16), transparent 35%),
                 #0b0d10;
         }
 
         .hero-content {
-            width: 100%;
             max-width: 850px;
         }
 
         .badge {
             display: inline-block;
-
-            padding: 8px 15px;
-            margin-bottom: 25px;
+            padding: 8px 14px;
+            margin-bottom: 22px;
 
             border: 1px solid rgba(85,214,138,0.35);
-
             border-radius: 999px;
 
             color: #55d68a;
-
             background: rgba(85,214,138,0.08);
 
             font-size: 13px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-
+            font-size: clamp(48px, 8vw, 90px);
             line-height: 1;
-
             margin-bottom: 25px;
         }
 
@@ -155,78 +118,172 @@
         }
 
         .hero p {
-            max-width: 680px;
-
-            margin: auto;
-
             color: #aeb4bb;
-
             font-size: 19px;
-
             line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
         }
 
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
         .buttons {
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 14px;
-
             margin-top: 35px;
 
+            display: flex;
+            justify-content: center;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
 
-            padding: 13px 23px;
-
+            padding: 13px 22px;
             border-radius: 9px;
 
             text-decoration: none;
-
             font-weight: 700;
 
-            transition: 0.2s ease;
+            transition: 0.2s;
         }
 
         .button-primary {
             background: #55d68a;
-
             color: #08100b;
         }
 
         .button-primary:hover {
             transform: translateY(-2px);
-
             filter: brightness(1.08);
         }
 
         .button-secondary {
-            color: #ffffff;
-
-            background: #15181c;
-
+            color: white;
             border: 1px solid #30353b;
+            background: #15181c;
         }
 
         .button-secondary:hover {
             border-color: #55d68a;
         }
 
+        /* SECTIONS */
+        section {
+            padding: 100px 7%;
+        }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
 
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #8f969e;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            padding: 28px;
+
+            background: #121519;
+            border: 1px solid #24292f;
+            border-radius: 16px;
+
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(85,214,138,0.5);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 12px;
+
+            background: rgba(85,214,138,0.1);
+            color: #55d68a;
+
+            font-size: 25px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #949ba3;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #55d68a;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* PACKS */
+        .pack-section {
+            background: #0e1114;
+        }
+
+        .pack {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .pack-box {
+            padding: 35px;
+
+            border-radius: 18px;
+            border: 1px solid #292e34;
+
+            background: linear-gradient(
+                145deg,
+                #15191d,
+                #0e1114
+            );
+        }
+
+        .pack-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .pack-box p {
+            color: #9ca3aa;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        /* FOOTER */
         footer {
             padding: 35px 7%;
 
@@ -235,7 +292,6 @@
             border-top: 1px solid #22272d;
 
             color: #747b83;
-
             background: #090b0d;
         }
 
@@ -243,74 +299,39 @@
             color: #55d68a;
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 850px) {
+        /* MOBILE */
+        @media (max-width: 750px) {
 
             nav {
-                flex-direction: column;
-
-                gap: 15px;
-
                 padding: 15px 5%;
             }
 
             .nav-links {
-                justify-content: center;
-
-                flex-wrap: wrap;
-
-                gap: 12px 18px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .hero {
-                padding-top: 180px;
-            }
-        }
-
-
-        @media (max-width: 500px) {
-
-            .nav-links {
-                gap: 10px 14px;
+                gap: 12px;
             }
 
             .nav-links a {
                 font-size: 12px;
             }
 
-            .hero h1 {
-                font-size: 45px;
+            .logo {
+                font-size: 17px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .pack {
+                grid-template-columns: 1fr;
             }
 
+            section {
+                padding: 75px 5%;
+            }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
+<!-- NAVIGATION -->
 <nav>
 
     <div class="logo">
@@ -318,53 +339,19 @@
     </div>
 
     <ul class="nav-links">
-
-        <li>
-            <a href="index.html">
-                Start
-            </a>
-        </li>
-
-        <li>
-            <a href="projekte.html">
-                Projekte
-            </a>
-        </li>
-
-        <li>
-            <a href="kb-pack.html">
-                KB Pack
-            </a>
-        </li>
-
-        <li>
-            <a href="kb-item-pack.html">
-                KB Item Pack
-            </a>
-        </li>
-
-        <li>
-            <a href="info.html">
-                Info
-            </a>
-        </li>
-
-        <li>
-            <a href="updates.html">
-                Updates
-            </a>
-        </li>
-
+        <li><a href="#start">Start</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li><a href="#kbpack">KB Pack</a></li>
+        <li><a href="#kbitempack">KB Item Pack</a></li>
+        <li><a href="#info">Info</a></li>
+        <li><a href="#updates">Updates</a></li>
     </ul>
 
 </nav>
 
 
-<!-- =========================
-     STARTSEITE
-========================= -->
-
-<section class="hero">
+<!-- START -->
+<section class="hero" id="start">
 
     <div class="hero-content">
 
@@ -378,15 +365,15 @@
 
         <p>
             Willkommen bei KB Mod Studios.
-            Wir entwickeln Minecraft Mods, Packs
-            und weitere Inhalte für die Minecraft-Community.
+            Wir entwickeln Minecraft Mods, Packs und weitere
+            Inhalte für die Minecraft-Community.
         </p>
 
         <div class="buttons">
 
             <a
                 class="button button-primary"
-                href="projekte.html"
+                href="#projekte"
             >
                 Projekte entdecken
             </a>
@@ -395,7 +382,6 @@
                 class="button button-secondary"
                 href="https://modrinth.com/organization/kb-mod-studios"
                 target="_blank"
-                rel="noopener noreferrer"
             >
                 Modrinth
             </a>
@@ -407,10 +393,162 @@
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- PROJEKTE -->
+<section id="projekte">
 
+    <div class="section-title">
+
+        <h2>Projekte</h2>
+
+        <p>
+            Unsere aktuellen Minecraft-Projekte.
+        </p>
+
+    </div>
+
+    <div class="projects">
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⚒
+            </div>
+
+            <h3>Deine Mod</h3>
+
+            <p>
+                Beschreibung deiner ersten veröffentlichten
+                Mod kommt hier hin.
+            </p>
+
+            <a href="#">
+                Mehr erfahren →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ◆
+            </div>
+
+            <h3>Mod in Prüfung</h3>
+
+            <p>
+                Dieses Projekt befindet sich momentan noch
+                in der Überprüfung auf Modrinth.
+            </p>
+
+            <a href="#">
+                Bald verfügbar →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                +
+            </div>
+
+            <h3>Weitere Projekte</h3>
+
+            <p>
+                Weitere Projekte von KB Mod Studios
+                werden hier veröffentlicht.
+            </p>
+
+            <a href="#updates">
+                Updates ansehen →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KB PACK -->
+<section class="pack-section" id="kbpack">
+
+    <div class="section-title">
+
+        <h2>KB Pack</h2>
+
+        <p>
+            Das offizielle Pack von KB Mod Studios.
+        </p>
+
+    </div>
+
+    <div class="pack">
+
+        <div class="pack-box">
+
+            <h3>KB Pack</h3>
+
+            <p>
+                Hier kannst du später dein KB Pack vorstellen,
+                inklusive Beschreibung, Version und Download.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#"
+            >
+                Zum Pack
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KB ITEM PACK -->
+<section id="kbitempack">
+
+    <div class="section-title">
+
+        <h2>KB Item Pack</h2>
+
+        <p>
+            Zusätzliche Items und Inhalte für Minecraft.
+        </p>
+
+    </div>
+
+    <div class="pack">
+
+        <div class="pack-box">
+
+            <h3>KB Item Pack</h3>
+
+            <p>
+                Informationen, Bilder, Versionen und
+                Downloads für das KB Item Pack.
+            </p>
+
+            <a
+                class="button button-primary"
+                href="#"
+            >
+                Zum Item Pack
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
 
     <p>
