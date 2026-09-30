@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KB Mod Studios – Wir Machen Minecraft Mods Projekte und Vieles Mehr. Schaue einfach bei Uns Vorbei und Lasse dich überraschen!">
+    <title>KB Mod Studios | Startseite</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0d10;
+            color: #ffffff;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 7%;
+
+            background: rgba(11, 13, 16, 0.85);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #55d68a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c9cdd2;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #55d68a;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 120px 20px 80px;
+
+            background:
+                radial-gradient(circle at 50% 20%, rgba(85,214,138,0.16), transparent 35%),
+                #0b0d10;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(85,214,138,0.35);
+            border-radius: 999px;
+
+            color: #55d68a;
+            background: rgba(85,214,138,0.08);
+
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #55d68a;
+        }
+
+        .hero p {
+            color: #aeb4bb;
+            font-size: 19px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 22px;
+            border-radius: 9px;
+
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #55d68a;
+            color: #08100b;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+
+        .button-secondary {
+            color: white;
+            border: 1px solid #30353b;
+            background: #15181c;
+        }
+
+        .button-secondary:hover {
+            border-color: #55d68a;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #8f969e;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            padding: 28px;
+
+            background: #121519;
+            border: 1px solid #24292f;
+            border-radius: 16px;
+
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(85,214,138,0.5);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 12px;
+
+            background: rgba(85,214,138,0.1);
+            color: #55d68a;
+
+            font-size: 25px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #949ba3;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #55d68a;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* PACKS */
+        .pack-section {
+            background: #0e1114;
+        }
+
+        .pack {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .pack-box {
+            padding: 35px;
+
+            border-radius: 18px;
+            border: 1px solid #292e34;
+
+            background: linear-gradient(
+                145deg,
+                #15191d,
+                #0e1114
+            );
+        }
+
+        .pack-box h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .pack-box p {
+            color: #9ca3aa;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        /* INFO */
+        .info {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .info p {
+            color: #a3a9b0;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* UPDATES */
+        .updates {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .update {
+            padding: 25px;
+
+            margin-bottom: 15px;
+
+            background: #121519;
+            border: 1px solid #24292f;
+            border-radius: 13px;
+        }
+
+        .update-date {
+            color: #55d68a;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .update h3 {
+            margin-bottom: 8px;
+        }
+
+        .update p {
+            color: #979ea6;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 35px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid #22272d;
+
+            color: #747b83;
+            background: #090b0d;
+        }
+
+        footer strong {
+            color: #55d68a;
+        }
+
+        /* MOBILE */
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            .pack {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <div class="logo">
+        KB <span>MOD STUDIOS</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#start">Start</a></li>
+        <li><a href="#projekte">Projekte</a></li>
+        <li>
