@@ -31,14 +31,11 @@
             min-height: 100vh;
         }
 
-        /* NAVIGATION */
-
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-
             z-index: 9999;
 
             display: flex;
@@ -74,10 +71,8 @@
         .nav-links a {
             color: #c9cdd2;
             text-decoration: none;
-
             font-size: 15px;
             font-weight: 600;
-
             transition: 0.2s ease;
         }
 
@@ -85,11 +80,8 @@
             color: #55d68a;
         }
 
-        /* HERO */
-
         .hero {
             padding: 160px 20px 70px;
-
             text-align: center;
 
             background:
@@ -134,8 +126,6 @@
             line-height: 1.7;
         }
 
-        /* FORMULAR */
-
         section {
             padding: 50px 7% 90px;
         }
@@ -166,7 +156,6 @@
 
         .form-group label {
             display: block;
-
             margin-bottom: 9px;
 
             color: #ffffff;
@@ -218,9 +207,7 @@
 
         .hint {
             margin-top: 7px;
-
             color: #747b83;
-
             font-size: 13px;
             line-height: 1.5;
         }
@@ -254,10 +241,15 @@
             filter: brightness(1.08);
         }
 
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .back-button {
             display: inline-block;
 
-            margin-top: 15px;
             margin-left: 10px;
 
             padding: 12px 20px;
@@ -279,7 +271,35 @@
             border-color: #55d68a;
         }
 
-        /* FOOTER */
+        .message {
+            display: none;
+
+            margin-top: 25px;
+            padding: 15px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .message.success {
+            display: block;
+
+            background: rgba(85, 214, 138, 0.1);
+            border: 1px solid rgba(85, 214, 138, 0.3);
+
+            color: #55d68a;
+        }
+
+        .message.error {
+            display: block;
+
+            background: rgba(255, 80, 80, 0.1);
+            border: 1px solid rgba(255, 80, 80, 0.3);
+
+            color: #ff8585;
+        }
 
         footer {
             padding: 35px 7%;
@@ -296,14 +316,11 @@
             color: #55d68a;
         }
 
-        /* MOBILE */
-
         @media (max-width: 850px) {
 
             nav {
                 flex-direction: column;
                 gap: 15px;
-
                 padding: 15px 5%;
             }
 
@@ -434,7 +451,7 @@
 
         <div class="form-box">
 
-            <form action="ideen.php" method="POST">
+            <form id="ideenForm">
 
                 <!-- PROJEKT -->
 
@@ -460,7 +477,7 @@
                         </option>
 
                         <option value="KB Item Pack">
-                            Noch nicht verfügbar!
+                            KB Item Pack
                         </option>
 
                     </select>
@@ -535,6 +552,7 @@
 
                     <button
                         class="button"
+                        id="submitButton"
                         type="submit"
                     >
                         Idee absenden
@@ -548,6 +566,11 @@
                     </a>
 
                 </div>
+
+                <div
+                    class="message"
+                    id="message"
+                ></div>
 
             </form>
 
@@ -571,6 +594,81 @@
     </p>
 
 </footer>
+
+<script>
+
+    const form = document.getElementById("ideenForm");
+    const button = document.getElementById("submitButton");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        button.disabled = true;
+        button.textContent = "Wird gesendet...";
+
+        message.className = "message";
+        message.textContent = "";
+
+        const data = {
+
+            projekt: document.getElementById("projekt").value,
+
+            idee: document.getElementById("idee").value,
+
+            stichpunkte:
+                document.getElementById("stichpunkte").value,
+
+            beschreibung:
+                document.getElementById("beschreibung").value
+
+        };
+
+        try {
+
+            const response = await fetch("/api/idee", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(data)
+
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    result.error || "Die Idee konnte nicht gesendet werden."
+                );
+            }
+
+            message.className = "message success";
+
+            message.textContent =
+                "✓ Deine Idee wurde erfolgreich gesendet!";
+
+            form.reset();
+
+        } catch (error) {
+
+            message.className = "message error";
+
+            message.textContent =
+                "✕ " + error.message;
+
+        }
+
+        button.disabled = false;
+        button.textContent = "Idee absenden";
+
+    });
+
+</script>
 
 </body>
 </html>
