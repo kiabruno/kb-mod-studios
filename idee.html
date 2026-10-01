@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Sende deine Ideen an KB Mod Studios."
+    >
+
+    <title>KB Mod Studios | Ideen</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0d10;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 7%;
+
+            background: rgba(11, 13, 16, 0.95);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #55d68a;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c9cdd2;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #55d68a;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 160px 20px 70px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(85, 214, 138, 0.18),
+                    transparent 40%
+                );
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 15px;
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(85, 214, 138, 0.35);
+            border-radius: 999px;
+
+            color: #55d68a;
+            background: rgba(85, 214, 138, 0.08);
+
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 75px);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #55d68a;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+
+            color: #aeb4bb;
+
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* FORMULAR */
+
+        section {
+            padding: 50px 7% 90px;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .form-box {
+            padding: 35px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #15191d,
+                    #0e1114
+                );
+
+            border: 1px solid #292e34;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #ffffff;
+
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .form-group label span {
+            color: #55d68a;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border-radius: 9px;
+
+            border: 1px solid #30353b;
+
+            background: #0b0d10;
+            color: #ffffff;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.2s ease;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #55d68a;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .hint {
+            margin-top: 7px;
+
+            color: #747b83;
+
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .button-area {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 23px;
+
+            border: none;
+            border-radius: 9px;
+
+            background: #55d68a;
+            color: #08100b;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+
+        .back-button {
+            display: inline-block;
+
+            margin-top: 15px;
+            margin-left: 10px;
+
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            background: #15181c;
+            border: 1px solid #30353b;
+
+            color: #ffffff;
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            border-color: #55d68a;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid #22272d;
+
+            color: #747b83;
+            background: #090b0d;
+        }
+
+        footer strong {
+            color: #55d68a;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 40px 5% 70px;
+            }
+
+            .form-box {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .nav-links {
+                gap: 10px 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .button,
+            .back-button {
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        KB <span>MOD STUDIOS</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Start
+            </a>
+        </li>
+
+        <li>
+            <a href="projekte.html">
+                Projekte
+            </a>
+        </li>
+
+        <li>
+            <a href="kbpack.html">
+                KB Pack
+            </a>
+        </li>
+
+        <li>
+            <a href="wartung.html">
+                KB Item Pack
+            </a>
+        </li>
+
+        <li>
+            <a href="wartung.html">
+                Info
+            </a>
+        </li>
+
+        <li>
+            <a href="ideen.html">
+                Ideen
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <div class="badge">
+        KB MOD STUDIOS
+    </div>
+
+    <h1>
+        Deine <span>Idee</span>
+    </h1>
+
+    <p>
+        Hast du eine Idee für das KB Pack oder KB Item Pack?
+        Schick sie uns und vielleicht wird sie Teil eines
+        zukünftigen Updates.
+    </p>
+
+</div>
+
+<!-- FORMULAR -->
+
+<section>
+
+    <div class="form-container">
+
+        <div class="form-box">
+
+            <form action="ideen.php" method="POST">
+
+                <!-- PROJEKT -->
+
+                <div class="form-group">
+
+                    <label for="projekt">
+                        Für welches Projekt?
+                        <span>*</span>
+                    </label>
+
+                    <select
+                        id="projekt"
+                        name="projekt"
+                        required
+                    >
+
+                        <option value="">
+                            Bitte auswählen
+                        </option>
+
+                        <option value="KB Pack">
+                            KB Pack
+                        </option>
+
+                        <option value="KB Item Pack">
+                            Noch nicht verfügbar!
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- IDEE -->
+
+                <div class="form-group">
+
+                    <label for="idee">
+                        Idee
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="idee"
+                        name="idee"
+                        placeholder="z. B. Neue Werkzeuge"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+                <!-- STICHPUNKTE -->
+
+                <div class="form-group">
+
+                    <label for="stichpunkte">
+                        Stichpunkte
+                        <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="stichpunkte"
+                        name="stichpunkte"
+                        placeholder="z. B.&#10;- Hammer&#10;- Schraubenschlüssel&#10;- Bohrer"
+                        maxlength="1000"
+                        required
+                    ></textarea>
+
+                    <div class="hint">
+                        Schreibe hier die wichtigsten Punkte deiner Idee hinein.
+                    </div>
+
+                </div>
+
+                <!-- BESCHREIBUNG -->
+
+                <div class="form-group">
+
+                    <label for="beschreibung">
+                        Beschreibung
+                        <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="beschreibung"
+                        name="beschreibung"
+                        placeholder="Beschreibe deine Idee genauer..."
+                        maxlength="3000"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <div class="button-area">
+
+                    <button
+                        class="button"
+                        type="submit"
+                    >
+                        Idee absenden
+                    </button>
+
+                    <a
+                        class="back-button"
+                        href="index.html"
+                    >
+                        Zurück
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>KB Mod Studios</strong>.
+        Alle Rechte vorbehalten.
+    </p>
+
+    <p style="margin-top: 8px;">
+        Nicht mit Mojang oder Microsoft verbunden.
+    </p>
+
+</footer>
+
+</body>
+</html>
