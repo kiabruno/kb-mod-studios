@@ -16,15 +16,6 @@ form.addEventListener("submit", async (event) => {
     const stichpunkte = document.getElementById("stichpunkte").value.trim();
     const beschreibung = document.getElementById("beschreibung").value.trim();
 
-    if (!projekt || !idee || !stichpunkte || !beschreibung) {
-        statusMessage.textContent = "Bitte fülle alle Felder aus.";
-        statusMessage.className = "error";
-
-        submitButton.disabled = false;
-        submitButton.textContent = "Idee absenden";
-        return;
-    }
-
     const discordMessage = {
         username: "KB Mod Studios",
         embeds: [
@@ -71,13 +62,15 @@ form.addEventListener("submit", async (event) => {
         });
 
         if (!response.ok) {
-            throw new Error("Discord-Webhooksendung fehlgeschlagen.");
+            throw new Error("Discord hat die Anfrage abgelehnt.");
         }
 
-        statusMessage.textContent = "✅ Deine Idee wurde erfolgreich gesendet!";
+        statusMessage.textContent =
+            "✅ Deine Idee wurde erfolgreich gesendet!";
         statusMessage.className = "success";
 
         form.reset();
+
     } catch (error) {
         console.error(error);
 
